@@ -26,7 +26,7 @@ Output includes:
 /align
 ```
 
-That's it. No arguments. The skill reads the files and returns the report. By default it does not save the output. To save: ask it to save and it will write to `audits/align-YYYY-MM-DD.md`.
+No arguments. The skill reads the files and returns the report. By default it does not save the output. To save: ask it to save and it will write to `audits/align-YYYY-MM-DD.md`.
 
 ---
 
@@ -48,13 +48,9 @@ The skill is written for a specific brain structure. You will need to update fiv
 
 ### 1. Mission statement
 
-In the Analysis Steps section, the mission check hardcodes:
+The mission check reads your mission from `CLAUDE.md`. Make sure your `CLAUDE.md` has a clear mission statement — the skill uses it as the lens to classify all activity.
 
-```
-Mission: accelerate clean energy adoption on planet Earth.
-```
-
-Replace with your own mission. This is the lens through which all activity gets classified.
+If you don't use `CLAUDE.md`, update the skill to read your mission from wherever you keep it.
 
 ### 2. File paths
 
@@ -77,19 +73,15 @@ Rename these to match your own folder structure. If you don't have some of these
 
 ### 3. Writing platform
 
-The skill checks `sources/substack/state.json` for last publish date and scans `sources/substack/` for recent post topics. If you use a different platform (Ghost, WordPress, a local draft folder), update those paths and remove the Substack-specific logic.
+The skill checks `sources/substack/state.json` for last publish date and scans `sources/substack/` for recent post topics. If you use a different platform (Ghost, WordPress, a local draft folder), update those paths.
 
-If you don't write publicly, remove the Substack section entirely.
+If you don't write publicly, remove the writing section entirely.
 
 ### 4. Paid work reference
 
-The Profit vs Build Balance section hardcodes:
+The Profit vs Build Balance section reads your primary paid engagement from `me/work.md`. Make sure that file names your current revenue engagement clearly so the skill can identify it.
 
-```
-SET (paid $3k/mo): {X activity items}
-```
-
-Replace `SET` and `$3k/mo` with your own engagement name and rate. If you have multiple revenue streams, list them. If you're not freelancing, reframe this section as whatever balance matters to you (e.g., client work vs. product, revenue vs. growth).
+If you have multiple revenue streams or work differently (product vs. freelance, for example), adjust the section to reflect the balance that matters to you.
 
 ### 5. Activity window
 
@@ -115,43 +107,43 @@ The skill uses a 14-day window for activity and 60-day window for decisions. Adj
 Top priority is cold; two unpaid builds running hot while paid work is warm.
 
 ### Mission Check
-Mission: accelerate clean energy adoption on planet Earth.
+Mission: help independent businesses compete with larger chains.
 4 major activity clusters in last 14 days:
-- On-mission: 2 (Sunny WhatsApp bot, SET CRM rollout)
-- Infrastructure: 1 (Brain compile system)
-- Off-thesis: 1 (Time Back form — consulting, not energy)
+- On-mission: 2 (client dashboard, onboarding flow)
+- Infrastructure: 1 (internal tooling)
+- Off-thesis: 1 (side project — not related to core mission)
 
 ### Priority Alignment
 | # | Priority | Touches (14d) | Status |
 |---|----------|---------------|--------|
-| 1 | SET Month 2 delivery | 1 day, 0 commits | Warm |
-| 2 | Sunny V10 | 5 days, 3 commits | Active |
-| 3 | Sol V1 | 0 days, 0 commits | Cold |
+| 1 | Client delivery — Phase 2 | 1 day, 0 commits | Warm |
+| 2 | Product v2 feature | 5 days, 3 commits | Active |
+| 3 | Sales outreach | 0 days, 0 commits | Cold |
 
 ### Drift Signals
-- Priorities with zero touches: Sol V1
-- Unlogged work that grew: Brain improvements (4 sessions, no priority entry)
+- Priorities with zero touches: Sales outreach
+- Unlogged work that grew: Internal tooling (4 sessions, no priority entry)
 - Active projects off the priority list: none
 - Paused items still showing up: none
 
-### Substack
+### Writing
 Last published: 2026-05-14 (7 days ago) — Warm
 Posts in last 14d: 1 — On-mission: 1, Adjacent: 0, Off-thesis: 0
 
 ### Profit vs Build Balance
-SET (paid $3k/mo): 6 activity items
+Client retainer: 6 activity items
 Unpaid builds: 11 activity items
 Ratio: Inverted
-Unpaid work is nearly 2x paid work in activity volume — rebalance toward SET delivery.
+Unpaid work is nearly 2x paid work in activity volume — rebalance toward client delivery.
 
 ### Top 3 Realignment Moves
-1. Open Sol V1 plan and do one concrete step today — it's been cold for 14 days
-2. Shift 2 Brain sessions this week to SET CRM adoption work
-3. Write the Time Back handoff and step back — it's off-thesis and leaking attention
+1. Open sales outreach list and send one message today — it's been cold for 14 days
+2. Cap internal tooling to one session this week, redirect the rest to client work
+3. Log or drop the side project — it's off-thesis and taking up untracked attention
 ```
 
 ---
 
 ## Source
 
-Part of [boryanmarkulis/brain](https://github.com/boryanmarkulis/brain) — a Claude Code-based second brain for founders building in the clean energy space.
+Part of [boryanmarkulis/skills](https://github.com/boryanmarkulis/skills) — Claude Code skills for daily workflows.

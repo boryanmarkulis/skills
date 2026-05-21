@@ -1,6 +1,6 @@
 ---
 name: align
-description: Strategic alignment audit. Checks whether Boryan's actual work in the last 14 days matches his stated mission, priorities, and direction. Flags drift, cold priorities, and profit/build imbalance.
+description: Strategic alignment audit. Checks whether your actual work in the last 14 days matches your stated mission, priorities, and direction. Flags drift, cold priorities, and profit/build imbalance.
 triggers:
   - /align
   - "am I on track"
@@ -59,8 +59,8 @@ Classify each priority:
 
 ### 3. Mission check
 
-For each major activity cluster identified from the activity layer, ask: does it advance one of the `favorite-problems.md` questions? Group into:
-- **On-mission** — directly accelerates clean energy adoption or the tools/systems that do
+For each major activity cluster identified from the activity layer, ask: does it advance the mission stated in `CLAUDE.md`? Group into:
+- **On-mission** — directly advances the stated mission or the tools/systems that do
 - **Infrastructure** — builds capability that enables the mission (acceptable)
 - **Off-thesis** — neither
 
@@ -72,26 +72,26 @@ Check each of these:
 - Projects in `projects/*/README.md` that have recent activity but are not in the priority list
 - Items in `me/goals.md` marked paused that still appear in activity
 
-### 5. Substack check
+### 5. Writing check
 
 From `sources/substack/state.json`, check `last_session_date`. If more than 7 days ago, flag as cold.
 
 From the dated post files in `sources/substack/` for the last 14 days, read each and identify the theme/topic. Classify each post:
-- **On-mission** — solar, clean energy, Regenify, tools, climate, building in the space
+- **On-mission** — directly related to the stated mission
 - **Adjacent** — founder life, productivity, mindset (builds the brand that serves the mission)
 - **Off-thesis** — neither
 
-Note: Substack is a distribution channel and brand asset for the mission, so Adjacent counts as acceptable. Off-thesis is the flag.
+Note: writing is a distribution channel and brand asset for the mission, so Adjacent counts as acceptable. Off-thesis is the flag.
 
 ### 6. Profit vs build balance
 
-From `me/work.md`, identify the paid engagement (currently Smart Energy Tech at $3k/month). Count activity items tied to the paid work vs. unpaid tool-building or exploration.
+From `me/work.md`, identify the primary paid engagement. Count activity items tied to paid work vs. unpaid tool-building or exploration.
 
 Classify:
 - **Healthy** — paid work has equal or more activity than unpaid builds
 - **Inverted** — unpaid work dominates; revenue-generating work is cold
 
-### 6. Verdict
+### 7. Verdict
 
 Based on the above, assign one overall verdict:
 - **Aligned** — top priorities are active, no major drift, paid work is healthy
@@ -111,7 +111,7 @@ Produce this exactly. Fill in real values from your analysis.
 {One sentence explaining why.}
 
 ### Mission Check
-Mission: accelerate clean energy adoption on planet Earth.
+Mission: {mission from CLAUDE.md}
 {N} major activity clusters in last 14 days:
 - On-mission: {M} ({list them})
 - Infrastructure: {K} ({list them})
@@ -130,13 +130,13 @@ Mission: accelerate clean energy adoption on planet Earth.
 - Active projects off the priority list: {list or "none"}
 - Paused items still showing up: {list or "none"}
 
-### Substack
+### Writing
 Last published: {YYYY-MM-DD} ({X} days ago) — {Active (<7d) | Warm (7-14d) | Cold (14d+)}
 Posts in last 14d: {N} — On-mission: {M}, Adjacent: {K}, Off-thesis: {O}
 {One line only if cold or off-thesis.}
 
 ### Profit vs Build Balance
-SET (paid $3k/mo): {X activity items}
+{Paid engagement name}: {X activity items}
 Unpaid builds: {Y activity items}
 Ratio: {Healthy | Inverted}
 {One line if inverted.}
@@ -159,4 +159,4 @@ No emojis. No em dashes. Dense output.
 
 ## Save Report (optional)
 
-If Boryan asks to save, write to `audits/align-{YYYY-MM-DD}.md`. Create the `audits/` folder if needed. Never save unless asked.
+If asked to save, write to `audits/align-{YYYY-MM-DD}.md`. Create the `audits/` folder if needed. Never save unless asked.
