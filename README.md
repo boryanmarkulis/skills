@@ -13,6 +13,7 @@ When you type `/writing`, Claude reads the skill file and runs the workflow end-
 | Skill | What it does |
 |-------|-------------|
 | [writing](./writing/) | Daily Substack writing practice — coaching brief, draft pass, publish |
+| [align](./align/) | Mission and time alignment audit — are you working on the right things? |
 
 ## How to install a skill
 
